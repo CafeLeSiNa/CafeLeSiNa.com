@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+* {
+  font-family: 'Noto Sans Japanese',Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+.site-page-header.ui.header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: hsl(43, 53%, 93%);
+    -webkit-text-stroke-color: hsl(38, 47%, 71%);
+
+    .logo {
+        font-size: 4em;
+        font-weight: bold;
+        margin-bottom: 0.1em;
+        -webkit-text-stroke-width: 2px;
+    }
+
+    .copy {
+        font-size: 1.4em;
+        -webkit-text-stroke-width: 1.5px;
+    }
+}
+
+.site-cover.ui.masthead {
+    background-image: url("/images/bg_1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: none;
+
+    min-height: 100%;
+
+    .ui.menu {
+        background-color: hsla(68, 48%, 96%, 0.8);
+
+        .item {
+            color: hsl(43, 18%, 35%);
+
+            &.active {
+                border-color: hsl(43, 18%, 35%);
+            }
+
+            &:hover {
+                color: hsl(43, 18%, 35%);
+            }
+        }
+    }
+}
+
+.introduction {
+    background-color: rgba(255, 255, 255, 0.7);
+
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 0.4rem;
+
+    border: 1px solid hsl(38, 31%, 64%);
+
+    width: 60%;
+
+    p {
+        text-align: left;
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    h2 {
+        color: hsl(28, 35%, 31%);
+        font-size: 1.1rem;
+    }
+
+    .ui.primary.button {
+        background-color: hsl(31, 78%, 62%);
+    }
+}
+
+.map {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5em;
+    background-color: hsla(68, 48%, 96%, 1);
+    border-radius: 0.4rem;
+    padding: 2em;
+
+    p {
+        margin-top: 3rem;
+        text-align: left;
+    }
+}
+
+.ui.breadcrumb {
+    margin-bottom: 1em;
+    display: block;
+    text-align: left;
+}
