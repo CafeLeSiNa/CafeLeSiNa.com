@@ -33,9 +33,9 @@ var sources = {
 };
 
 var templatePartials = {
-    head:   "templates/partial/head.tmpl",
-    header:   "templates/partial/header.tmpl",
-    nav: "templates/partial/nav.tmpl",
+    head:   "html/partial/head.tmpl",
+    header:   "html/partial/header.tmpl",
+    nav: "html/partial/nav.tmpl",
 };
 
 var templateVars = {};
@@ -49,22 +49,22 @@ reloadTemplateData();
         gulp.src('vendor/semantic/dist/*.js').pipe(gulp.dest('public/js'));
     });
 
-    gulp.task(prefix + 'templates', function() {
-        sources[prefix]("templates/**/index.tmpl", {base: './templates'})
+    gulp.task(prefix + 'html', function() {
+        sources[prefix]("html/**/index.tmpl", {base: './html'})
             .pipe(mustache(templateVars, {}, templatePartials))
             .pipe(gulp.dest("public"));
     });
 
-    gulp.task(prefix + 'templates_partial', function() {
-        sources[prefix]("templates/partial/*.tmpl", function() {
-            recompileTemplates();
+    gulp.task(prefix + 'html_partial', function() {
+        sources[prefix]("html/partial/*.tmpl", function() {
+            recompilehtml();
         });
     });
 
     gulp.task(prefix + 'jsondata', function() {
         sources[prefix]("data/*.json", function() {
             reloadTemplateData();
-            recompileTemplates();
+            recompilehtml();
         });
     });
 
@@ -94,14 +94,14 @@ gulp.task('serve', function() {
     }, 1000);
 });
 
-gulp.task('build', ['ssemantic', 'sjsondata', 'stemplates', 'stemplates_partial', 'scss', 'sjs', 'simg']);
-gulp.task('watch-build', ['wsemantic', 'wjsondata', 'wtemplates', 'wtemplates_partial', 'wcss', 'wjs', 'wimg']);
+gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'shtml_partial', 'scss', 'sjs', 'simg']);
+gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'whtml_partial', 'wcss', 'wjs', 'wimg']);
 
 gulp.task('release', ['build']);
 gulp.task('dev', ['watch-build', 'serve']);
 
-function recompileTemplates() {
-    gulp.src("templates/**/index.tmpl", {base: './templates'})
+function recompilehtml() {
+    gulp.src("html/**/index.tmpl", {base: './html'})
     .pipe(mustache(templateVars, {}, templatePartials))
     .pipe(gulp.dest("public"));
 }
