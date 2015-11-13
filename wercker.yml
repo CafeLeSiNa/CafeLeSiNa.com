@@ -6,10 +6,8 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-    - script:
-        name: build sources
-        code: |
-          `npm bin`/gulp release
+    - hgen/gulp:
+        tasks: release
 deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
