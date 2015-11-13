@@ -43,10 +43,10 @@ reloadTemplateData();
 
 ['s', 'w'].forEach(function(prefix) {
     gulp.task(prefix + 'semantic', function() {
-        gulp.src('semantic/dist/*.js').pipe(gulp.dest('public/javascripts'));
-        gulp.src('semantic/dist/*.css').pipe(gulp.dest('public/stylesheets'));
-        gulp.src('semantic/dist/themes/**').pipe(gulp.dest('public/stylesheets/themes'));
-        gulp.src('semantic/dist/*.js').pipe(gulp.dest('public/javascripts'));
+        gulp.src('vendor/semantic/dist/*.js').pipe(gulp.dest('public/javascripts'));
+        gulp.src('vendor/semantic/dist/*.css').pipe(gulp.dest('public/stylesheets'));
+        gulp.src('vendor/semantic/dist/themes/**').pipe(gulp.dest('public/stylesheets/themes'));
+        gulp.src('vendor/semantic/dist/*.js').pipe(gulp.dest('public/javascripts'));
     });
 
     gulp.task(prefix + 'templates', function() {
