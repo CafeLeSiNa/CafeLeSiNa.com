@@ -1,5 +1,8 @@
 {
   "name": "cafe-lesina-web",
+  "repository": "https://github.com/CafeLeSiNa/CafeLeSiNa.com",
+  "description": "The webpage of Cafe LeSiNa",
+  "private": true,
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-mustache-plus": "^1.0.1",
