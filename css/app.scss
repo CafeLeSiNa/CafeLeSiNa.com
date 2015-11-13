@@ -163,11 +163,17 @@ header {
         text-align: left;
         line-height: 1.6;
         font-size: 1.05rem;
+        @media (max-width: 600px) {
+            font-size: 0.85rem;
+        }
     }
 
     h2 {
         color: hsl(28, 35%, 31%);
         font-size: 1.1rem;
+        @media (max-width: 600px) {
+            font-size: 0.9rem;
+        }
     }
 
     .ui.primary.button {
@@ -187,11 +193,10 @@ header {
 .map, .menu-list {
     text-align: left;
 
-    width: 50%;
     margin: 0 auto;
     margin-top: 5em;
     @media (max-width: 600px) {
-        width: 90%;
+        width: 100%;
         margin-top: 2em;
     }
 
@@ -222,8 +227,12 @@ img {
 
 .ui.huge.primary.button {
     @media (max-width: 600px) {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
+}
+
+iframe#gmap {
+    max-height: 50%;
 }
 
 @media (max-width: 600px) {

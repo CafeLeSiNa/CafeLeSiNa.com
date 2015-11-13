@@ -107,7 +107,7 @@ function recompilehtml() {
 }
 
 function reloadTemplateData() {
-    templateVars.menu_names = loadJSON("./data/menu.json");
+    templateVars.menu = loadJSON("./data/menu.json");
 }
 
 function loadJSON(path) {

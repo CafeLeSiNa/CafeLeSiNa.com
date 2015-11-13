@@ -8,37 +8,39 @@
         {{> header}}
         {{> nav }}
 
-        <div class="menu-list">
-            <div class="ui breadcrumb">
-                <a href="/" class="section">トップ</a>
-                <i class="right angle icon divider"></i>
-                <a href="/menu" class="active section">メニュー</a>
-            </div>
-
-            <h1 class="page-title"><i class="food icon"></i>メニュー表</h1>
-
-            <ul class="ui list">
-                {{#menu_names}}
-                <li>{{name}}</li>
-                {{/menu_names}}
-            </ul>
-
-            <div class="ui three column grid">
-              <div class="column">
-                <div class="ui segment">
-                  <img src="/img/bg_1.jpg">
+        <div class="ui text container">
+            <div class="menu-list">
+                <div class="ui breadcrumb">
+                    <a href="/" class="section">トップ</a>
+                    <i class="right angle icon divider"></i>
+                    <a href="/menu" class="active section">メニュー</a>
                 </div>
-              </div>
-              <div class="column">
-                <div class="ui segment">
-                  <img src="/img/bg_1.jpg">
+
+                <h1 class="page-title"><i class="food icon"></i>メニュー表</h1>
+
+                <ul class="ui list">
+                    {{#menu.names}}
+                    <li>{{name}} ... {{price}}円</li>
+                    {{/menu.names}}
+                </ul>
+
+                <div class="ui three column grid">
+                  <div class="column">
+                    <div class="ui segment">
+                      <img src="/img/bg_1.jpg">
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="ui segment">
+                      <img src="/img/bg_1.jpg">
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="ui segment">
+                      <img src="/img/bg_1.jpg">
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="column">
-                <div class="ui segment">
-                  <img src="/img/bg_1.jpg">
-                </div>
-              </div>
             </div>
         </div>
     </div>
