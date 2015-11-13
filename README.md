@@ -1,7 +1,15 @@
 # LeSiNa
 
+## Development
+
+### Install dependencies
+
 ```
-$ npm install
+$ ./install
 ```
 
-`make dev`
+### Run server(watch+livereload)
+
+```
+$ make dev
+```

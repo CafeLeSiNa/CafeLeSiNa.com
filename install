@@ -1,0 +1,4 @@
+#!/bin/sh
+
+npm install
+ls vendor/semantic/dist || (cd vendor/semantic; $(npm bin)/gulp build)
