@@ -27,6 +27,10 @@ header {
         margin: 0;
         display: inline-block;
         margin-right: 1.4em;
+        @media (max-width: 600px) {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
     }
 
     dl {
@@ -37,6 +41,7 @@ header {
         dt, dd {
             display: inline-block;
         }
+
 
         dt {
             font-weight: bold;
@@ -55,6 +60,15 @@ header {
             margin-right: 1.4em;
             padding: 0;
         }
+
+        @media (max-width: 600px) {
+            & {
+                font-size: 0.7rem !important;
+                dd {
+                    margin-right: 0.3rem;
+                }
+            }
+        }
     }
 }
 
@@ -66,6 +80,10 @@ header {
 
     .logo {
         font-size: 4em;
+        @media (max-width: 600px) {
+            font-size: 1.5em;
+        }
+
         font-weight: bold;
         margin-bottom: 0.1em;
         -webkit-text-stroke-width: 2px;
@@ -74,6 +92,9 @@ header {
     .copy {
         font-size: 1.4em;
         -webkit-text-stroke-width: 1.5px;
+        @media (max-width: 600px) {
+            font-size: 1em;
+        }
     }
 }
 
@@ -99,6 +120,13 @@ header {
 
             &:hover {
                 color: hsl(43, 18%, 35%);
+            }
+        }
+
+        @media (max-width: 600px) {
+            font-size: 0.9rem;
+            .item {
+                border-width: 1px;
             }
         }
     }
@@ -127,6 +155,9 @@ header {
     border: 1px solid hsl(38, 31%, 64%);
 
     width: 60%;
+    @media (max-width: 600px) {
+        width: 98%;
+    }
 
     p {
         text-align: left;
@@ -182,4 +213,16 @@ header {
 
 img {
     max-width: 100%;
+}
+
+.ui.huge.primary.button {
+    @media (max-width: 600px) {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .pc {
+        display: none;
+    }
 }
