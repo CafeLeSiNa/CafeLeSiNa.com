@@ -7,6 +7,10 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
     - npm-install
+    - script:
+        name: build semantic ui
+        code: |
+          (cd vendor/semantic; $(npm bin)/gulp build)
     - hgen/gulp:
         tasks: release
 deploy:
