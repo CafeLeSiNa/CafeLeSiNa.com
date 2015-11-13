@@ -1,4 +1,4 @@
-# LeSina
+# LeSiNa
 
 ```
 $ npm install
