@@ -1,8 +1,5 @@
-npm-install:
-	npm install
-build-semantic: npm-install
-	cd semantic && `npm bin`/gulp build
-dev: build-semantic
+dev:
 	`npm bin`/gulp dev
-release: build-semantic
+release:
 	`npm bin`/gulp release
+	git subtree push --prefix public/ origin gh-pages
