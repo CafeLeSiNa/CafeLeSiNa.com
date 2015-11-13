@@ -24,7 +24,7 @@ Package.onUse(function(api) {
     'themes/default/assets/fonts/icons.woff2',
 
     // flags
-    'themes/default/assets/images/flags.png',
+    'themes/default/assets/img/flags.png',
 
     // release
     'semantic.css',

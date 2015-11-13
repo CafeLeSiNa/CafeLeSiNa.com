@@ -6,7 +6,7 @@
         Paths
 --------------------*/
 
-@imagePath : "../../themes/default/assets/images";
+@imagePath : "../../themes/default/assets/img";
 @fontPath  : "../../themes/default/assets/fonts";
 
 /*-------------------

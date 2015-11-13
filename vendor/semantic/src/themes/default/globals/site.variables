@@ -332,7 +332,7 @@
 --------------------*/
 
 /* For source only. Modified in gulp for dist */
-@imagePath : '../../themes/default/assets/images';
+@imagePath : '../../themes/default/assets/img';
 @fontPath  : '../../themes/default/assets/fonts';
 
 /*-------------------

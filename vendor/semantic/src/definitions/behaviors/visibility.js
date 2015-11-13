@@ -192,29 +192,29 @@ $.fn.visibility = function(parameters) {
           },
         },
 
-        precache: function(images, callback) {
-          if (!(images instanceof Array)) {
-            images = [images];
+        precache: function(img, callback) {
+          if (!(img instanceof Array)) {
+            img = [img];
           }
           var
-            imagesLength  = images.length,
+            imgLength  = img.length,
             loadedCounter = 0,
             cache         = [],
             cacheImage    = document.createElement('img'),
             handleLoad    = function() {
               loadedCounter++;
-              if (loadedCounter >= images.length) {
+              if (loadedCounter >= img.length) {
                 if ($.isFunction(callback)) {
                   callback();
                 }
               }
             }
           ;
-          while (imagesLength--) {
+          while (imgLength--) {
             cacheImage         = document.createElement('img');
             cacheImage.onload  = handleLoad;
             cacheImage.onerror = handleLoad;
-            cacheImage.src     = images[imagesLength];
+            cacheImage.src     = img[imgLength];
             cache.push(cacheImage);
           }
         },
@@ -1140,7 +1140,7 @@ $.fn.visibility.settings = {
   // check position immediately on init
   initialCheck           : true,
 
-  // whether to refresh calculations after all page images load
+  // whether to refresh calculations after all page img load
   refreshOnLoad          : true,
 
   // whether to refresh calculations after page resize event
