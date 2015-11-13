@@ -6,6 +6,7 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+    - npm-install
     - hgen/gulp:
         tasks: release
 deploy:
