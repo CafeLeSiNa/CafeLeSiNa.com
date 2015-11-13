@@ -190,6 +190,11 @@ header {
     width: 50%;
     margin: 0 auto;
     margin-top: 5em;
+    @media (max-width: 600px) {
+        width: 90%;
+        margin-top: 2em;
+    }
+
     background-color: hsla(68, 48%, 96%, 1);
     border-radius: 0.4rem;
     padding: 2em;
