@@ -108,6 +108,7 @@ function recompilehtml() {
 
 function reloadTemplateData() {
     templateVars.menu = loadJSON("./data/menu.json");
+    templateVars.photos = loadJSON("./data/photos.json");
 }
 
 function loadJSON(path) {

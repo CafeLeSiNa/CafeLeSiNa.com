@@ -18,22 +18,10 @@
 
                 <h1 class="page-title"><i class="photo icon"></i>店内写真</h1>
 
-                <div class="ui three column grid">
-                  <div class="column">
-                    <div class="ui segment">
-                      <img src="/img/bg_1.jpg">
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="ui segment">
-                      <img src="/img/bg_1.jpg">
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="ui segment">
-                      <img src="/img/bg_1.jpg">
-                    </div>
-                  </div>
+                <div class="gallery" id="photos">
+                    {{#photos}}
+                    <a href="{{src}}" data-ngid="{{src}}" data-ngdesc="{{src}}" data-ngthumb="{{src}}"></a>
+                    {{/photos}}
                 </div>
             </div>
         </div>

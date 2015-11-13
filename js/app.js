@@ -53,13 +53,14 @@ $(function() {
         return url.replace(/\/$/, "");
     }
 
-
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-    // Resize stuff...
-    google.maps.event.addDomListener(window, "resize", function() {
-        var center = map.getCenter();
-        google.maps.event.trigger(map, "resize");
-        map.setCenter(center); 
+    $('.gallery').nanoGallery({
+        theme: 'light',
+        colorScheme: 'none',
+        thumbnailWidth: 'auto',
+        thumbnailHeight: 100,
+        itemsBaseURL: '/img',
+        thumbnailHoverEffect: [{ name: 'labelAppear75', duration: 300 }],
+        i18n: { thumbnailImageDescription: '拡大する', thumbnailAlbumDescription: 'Open Album' },
+        thumbnailLabel: { display: true, position: 'overImageOnMiddle', align: 'center' }
     });
 });
