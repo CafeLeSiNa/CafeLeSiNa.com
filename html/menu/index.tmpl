@@ -20,9 +20,13 @@
 
                 <ul class="ui list">
                     {{#menu.names}}
-                    <li>{{name}} ... {{price}}円</li>
+                    <li>{{name}} {{#set}}※{{/set}} ... {{price}}円</li>
                     {{/menu.names}}
                 </ul>
+
+                <p class="note">
+                    ※付きメニューは、サラダ、コーヒーが付いています。
+                </p>
 
                 <div class="ui three column grid">
                   <div class="column">

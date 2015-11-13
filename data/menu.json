@@ -2,19 +2,23 @@
     "names": [
         {
             "name": "アイスコーヒー",
-            "price": 400
+            "price": 400,
+            "set": false
         },
         {
-            "name": "日替わりプレート(サラダ、コーヒー付き)",
-            "price": 1000
+            "name": "日替わりプレート",
+            "price": 1000,
+            "set": true
         },
         {
-            "name": "LeSiNa特製カレー(サラダ、コーヒー付き)",
-            "price": 1000
+            "name": "LeSiNa特製カレー",
+            "price": 1000,
+            "set": true
         },
         {
-            "name": "パスタランチ(サラダ、コーヒー付き)",
-            "price": 1000
+            "name": "パスタランチ",
+            "price": 1000,
+            "set": true
         }
     ]
 }

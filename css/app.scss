@@ -186,7 +186,14 @@ header {
 
 .menu-list {
     ul.ui.list {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .note {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -203,6 +210,9 @@ header {
     background-color: hsla(68, 48%, 96%, 1);
     border-radius: 0.4rem;
     padding: 2em;
+    @media (max-width: 600px) {
+        padding: 1.4em;
+    }
 
     p {
         margin-top: 3rem;
