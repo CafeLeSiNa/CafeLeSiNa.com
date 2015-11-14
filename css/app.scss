@@ -145,13 +145,18 @@ header {
 
             &:hover {
                 color: hsl(43, 18%, 35%);
+                border-color: hsla(43, 18%, 35%, 0.8);
+                transition: all .8s ease;
             }
         }
 
         @media (max-width: 600px) {
             font-size: 0.9rem;
             .item {
+                border-color: hsla(43, 18%, 35%, 0.5);
                 border-width: 1px;
+                padding-top: 0.9rem;
+                padding-bottom: 0.9rem;
             }
         }
     }
