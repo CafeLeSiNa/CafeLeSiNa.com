@@ -4,6 +4,8 @@ var mustache = require("gulp-mustache-plus");
 var webserver = require('gulp-webserver');
 var sass = require('gulp-sass');
 var fs = require('fs');
+var imageResize = require('gulp-image-resize');
+var rename = require('gulp-rename');
 
 var sources = {
     s: function s(path, options, cb) {
@@ -81,6 +83,18 @@ reloadTemplateData();
     gulp.task(prefix + 'img', function() {
         sources[prefix]('img/**/*', {base: './img'}).pipe(gulp.dest('public/img'));
     });
+
+
+    gulp.task(prefix + 'thumbnail', function () {
+        sources[prefix]('img/*')
+        .pipe(imageResize({ 
+            height : 128,
+            upscale : false,
+            imageMagick: true
+        }))
+        .pipe(rename(function (path) { path.basename += "-thumbnail"; }))
+        .pipe(gulp.dest('public/img'));
+    });
 });
 
 gulp.task('serve', function() {
@@ -94,8 +108,8 @@ gulp.task('serve', function() {
     }, 1000);
 });
 
-gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'shtml_partial', 'scss', 'sjs', 'simg']);
-gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'whtml_partial', 'wcss', 'wjs', 'wimg']);
+gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'shtml_partial', 'scss', 'sjs', 'simg', 'sthumbnail']);
+gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'whtml_partial', 'wcss', 'wjs', 'wimg', 'wthumbnail']);
 
 gulp.task('release', ['build']);
 gulp.task('dev', ['watch-build', 'serve']);
