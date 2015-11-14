@@ -4,6 +4,17 @@
   font-family: 'Noto Sans Japanese',Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
 
+// Override semantic ui
+.ui.list, p {
+    font-size: 1rem;
+}
+
+html {
+    @media (max-width: 600px) {
+        font-size: 0.9rem;
+    }
+}
+
 .page-title {
     font-size: 1.2rem;
     color: hsl(43, 18%, 35%);
@@ -170,15 +181,14 @@ header {
 
     width: 60%;
     @media (max-width: 600px) {
-        width: 98%;
+        width: 100%;
     }
 
     p {
         text-align: left;
         line-height: 1.6;
-        font-size: 1.05rem;
         @media (max-width: 600px) {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
     }
 
@@ -186,7 +196,7 @@ header {
         color: hsl(28, 35%, 31%);
         font-size: 1.1rem;
         @media (max-width: 600px) {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
     }
 
@@ -201,13 +211,11 @@ header {
 .menu-list {
     ul.ui.list {
         margin-bottom: 1rem;
-        font-size: 0.9rem;
     }
 
     .note {
         margin-top: 0;
         margin-bottom: 2rem;
-        font-size: 0.9rem;
     }
 }
 
@@ -223,7 +231,7 @@ header {
 
     background-color: hsla(68, 48%, 96%, 1);
     border-radius: 0.4rem;
-    padding: 2em;
+    padding: 1.4rem 2rem;
     @media (max-width: 600px) {
         padding: 1.4em;
     }
@@ -234,7 +242,6 @@ header {
 }
 
 .ui.breadcrumb {
-    margin-bottom: 1rem;
     display: block;
     text-align: left;
 }
