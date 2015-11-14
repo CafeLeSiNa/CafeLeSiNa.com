@@ -9,6 +9,11 @@
     color: hsl(43, 18%, 35%);
 }
 
+.page-sub-title {
+    font-size: 1rem;
+    color: hsl(43, 18%, 35%);
+}
+
 header {
     background-color: #FFF;
     margin-bottom: 1em;
@@ -215,7 +220,6 @@ header {
     }
 
     p {
-        margin-top: 3rem;
         text-align: left;
     }
 }
@@ -256,4 +260,8 @@ iframe#gmap {
         right: 1em !important;
         font-size: 1.5em !important;
     }
+}
+
+.routes {
+    margin-top: 2em;
 }
