@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var fs = require('fs');
 var imageResize = require('gulp-image-resize');
 var rename = require('gulp-rename');
+var path = require('path');
 
 var sources = {
     s: function s(path, options, cb) {
@@ -39,6 +40,13 @@ var templatePartials = {
     header:   "html/partial/header.tmpl",
     nav: "html/partial/nav.tmpl",
 };
+
+function basenameSuffix(filepath, suffix) {
+    ext = path.extname(filepath);
+    base = path.basename(filepath, ext);
+    dir = path.dirname(filepath);
+    return dir + "/" + base + suffix + ext;
+}
 
 var templateVars = {};
 reloadTemplateData();
@@ -122,6 +130,9 @@ function recompilehtml() {
 
 function reloadTemplateData() {
     templateVars.menu = loadJSON("./data/menu.json");
+    templateVars.menu.images.forEach(function(image) {
+        image.src_thumbnail = basenameSuffix(image.src, "-thumbnail");
+    });
     templateVars.photos = loadJSON("./data/photos.json");
 }
 

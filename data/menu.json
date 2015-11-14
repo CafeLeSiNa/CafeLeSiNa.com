@@ -20,5 +20,19 @@
             "price": 1000,
             "set": true
         }
+    ],
+    "images": [
+        {
+            "src": "curry.jpg",
+            "description": ""
+        },
+        {
+            "src": "pasta.jpg",
+            "description": ""
+        },
+        {
+            "src": "ramen.jpg",
+            "description": ""
+        }
     ]
 }

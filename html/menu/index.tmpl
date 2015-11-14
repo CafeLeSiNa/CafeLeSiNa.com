@@ -28,22 +28,10 @@
                     ※付きメニューは、サラダ、コーヒーが付いています。
                 </p>
 
-                <div class="ui three column grid">
-                  <div class="column">
-                    <div class="ui segment">
-                      <img src="/img/bg_1.jpg">
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="ui segment">
-                      <img src="/img/bg_1.jpg">
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="ui segment">
-                      <img src="/img/bg_1.jpg">
-                    </div>
-                  </div>
+                <div class="gallery" id="photos">
+                    {{#menu.images}}
+                    <a href="{{src}}" data-ngid="{{src}}" data-ngdesc="{{src}}" data-ngthumb="{{src_thumbnail}}"></a>
+                    {{/menu.images}}
                 </div>
             </div>
         </div>
