@@ -39,6 +39,8 @@ var templatePartials = {
     head:   "html/partial/head.tmpl",
     header:   "html/partial/header.tmpl",
     nav: "html/partial/nav.tmpl",
+    js: "html/partial/js.tmpl",
+    css: "html/partial/css.tmpl",
 };
 
 function basenameSuffix(filepath, suffix) {
