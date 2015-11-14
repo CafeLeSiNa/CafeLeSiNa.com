@@ -63,4 +63,6 @@ $(function() {
         i18n: { thumbnailImageDescription: '拡大する', thumbnailAlbumDescription: 'Open Album' },
         thumbnailLabel: { display: true, position: 'overImageOnMiddle', align: 'center' }
     });
+
+    $('.ui.embed').embed();
 });
