@@ -1,5 +1,8 @@
 var attachFastClick = require('fastclick');
 
+require('browsernizr/test/css/transforms3d');
+require('browsernizr');
+
 $(function() {
     'use strict';
 

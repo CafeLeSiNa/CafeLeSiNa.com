@@ -5,6 +5,7 @@
   "private": true,
   "devDependencies": {
     "browserify": "^9.0.8",
+    "browsernizr": "^2.0.1",
     "fastclick": "^1.0.6",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
