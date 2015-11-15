@@ -7,6 +7,7 @@ var fs = require('fs');
 var imageResize = require('gulp-image-resize');
 var rename = require('gulp-rename');
 var path = require('path');
+var autoprefixer = require('gulp-autoprefixer');
 
 var sources = {
     s: function s(path, options, cb) {
@@ -56,7 +57,11 @@ reloadTemplateData();
 ['s', 'w'].forEach(function(prefix) {
     gulp.task(prefix + 'semantic', function() {
         gulp.src('vendor/semantic/dist/*.js').pipe(gulp.dest('public/js'));
-        gulp.src('vendor/semantic/dist/*.css').pipe(gulp.dest('public/css'));
+        gulp.src('vendor/semantic/dist/*.css')
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'Android 2.2', 'ie 8', 'ie 9'],
+            }))
+            .pipe(gulp.dest('public/css'));
         gulp.src('vendor/semantic/dist/themes/**').pipe(gulp.dest('public/css/themes'));
         gulp.src('vendor/semantic/dist/*.js').pipe(gulp.dest('public/js'));
     });
@@ -83,6 +88,9 @@ reloadTemplateData();
     gulp.task(prefix + 'css', function() {
         sources[prefix]('css/*.scss')
             .pipe(sass().on('error', sass.logError))
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'Android 2.2', 'ie 8', 'ie 9'],
+            }))
             .pipe(gulp.dest('public/css'));
     });
 

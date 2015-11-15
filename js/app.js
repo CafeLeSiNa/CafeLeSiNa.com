@@ -21,23 +21,45 @@ $(function() {
     var $kanban_flip = $(".flip-kanban");
     var $kanban_flip_back = $(".flip-back-kanban");
 
-    $kanban.flip({
-        trigger: 'manual'
-    });
-    $kanban.on('flip:done',function(){
-        $kanban_flip.popup('hide');
-    });
+    var flipable = $('html.csstransforms3d').size() >= 1;
 
-    $kanban_flip.on('click', function(evt) {
-        evt.preventDefault();
-        $kanban_flip.popup('hide');
-        $kanban.flip(true);
-    }).popup({on: 'hover', position: 'top right'});
+    if (flipable) {
+        $kanban.flip({
+            trigger: 'manual'
+        });
 
-    $kanban_flip_back.on('click', function(evt) {
-        evt.preventDefault();
-        $kanban.flip(false);
-    });
+        $kanban.on('flip:done',function(){
+            $kanban_flip.popup('hide');
+        });
+
+        $kanban_flip.on('click', function(evt) {
+            evt.preventDefault();
+            $kanban_flip.popup('hide');
+            $kanban.flip(true);
+        }).popup({on: 'hover', position: 'top right'});
+
+        $kanban_flip_back.on('click', function(evt) {
+            evt.preventDefault();
+            $kanban.flip(false);
+        });
+    } else {
+        var $front = $kanban.find('.front');
+        var $back = $kanban.find('.back');
+
+        $back.css({display: "none"});
+
+        $kanban_flip.on('click', function(evt) {
+            evt.preventDefault();
+            $front.css({display: "none"});
+            $back.css({display: "block"});
+        });
+
+        $kanban_flip_back.on('click', function(evt) {
+            evt.preventDefault();
+            $back.css({display: "none"});
+            $front.css({display: "block"});
+        });
+    }
 
     // Workaround for flip.js
     var introductionHeight = max($('.front .introduction').outerHeight(), $('.back .introduction').outerHeight()) + 21;

@@ -31,6 +31,10 @@ html {
         border: 1px solid hsla(43, 18%, 35%, 0.7);
         border-radius: 0.4rem;
         padding: 0.6rem;
+        display: block;
+
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -184,6 +188,7 @@ header {
 
     border: 1px solid hsl(38, 31%, 64%);
 
+    box-sizing: border-box;
     width: 60%;
     @media (max-width: 600px) {
         width: 100%;
@@ -229,6 +234,8 @@ header {
 
     margin: 0 auto;
     margin-top: 5em;
+
+    box-sizing: border-box;
     @media (max-width: 600px) {
         width: 100%;
         margin-top: 2em;
