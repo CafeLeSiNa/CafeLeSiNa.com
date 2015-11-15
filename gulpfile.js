@@ -9,6 +9,22 @@ var rename = require('gulp-rename');
 var path = require('path');
 var autoprefixer = require('gulp-autoprefixer');
 
+var watchify = require('gulp-watchify');
+var uglify = require('gulp-uglify');
+var streamify = require('gulp-streamify');
+
+var watching = false;
+gulp.task('enable-watchify', function() { watching = true; });
+
+gulp.task('js', watchify(function(watchify) {
+    gulp.src(['js/app.js'])
+        .pipe(watchify({
+            watch: watching
+        }))
+        .pipe(streamify(uglify()))
+        .pipe(gulp.dest('public/js/'));
+}));
+
 var sources = {
     s: function s(path, options, cb) {
         if (typeof options === 'function') {
@@ -94,10 +110,6 @@ reloadTemplateData();
             .pipe(gulp.dest('public/css'));
     });
 
-    gulp.task(prefix + 'js', function() {
-        sources[prefix]('js/*.js').pipe(gulp.dest('public/js'));
-    });
-
     gulp.task(prefix + 'img', function() {
         sources[prefix]('img/**/*', {base: './img'}).pipe(gulp.dest('public/img'));
     });
@@ -144,8 +156,8 @@ gulp.task('serve', function() {
     }, 1000);
 });
 
-gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'shtml_partial', 'scss', 'sjs', 'simg', 'sthumbnail']);
-gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'whtml_partial', 'wcss', 'wjs', 'wimg', 'wthumbnail']);
+gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'shtml_partial', 'scss', 'js', 'simg', 'sthumbnail']);
+gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'whtml_partial', 'wcss', 'enable-watchify', 'js', 'wimg', 'wthumbnail']);
 
 gulp.task('release', ['build']);
 gulp.task('dev', ['watch-build', 'serve']);
