@@ -1,5 +1,9 @@
+var attachFastClick = require('fastclick');
+
 $(function() {
     'use strict';
+
+    attachFastClick(document.body);
 
     // Navigation
     $(".menu a").each(function(_, node) {
