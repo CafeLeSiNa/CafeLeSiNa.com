@@ -1,42 +1,34 @@
 [
     {
         "src": "photo_1.jpg",
-        "src_thumbnail": "photo_1-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_2.jpg",
-        "src_thumbnail": "photo_2-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_3.jpg",
-        "src_thumbnail": "photo_3-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_4.jpg",
-        "src_thumbnail": "photo_4-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_5.jpg",
-        "src_thumbnail": "photo_5-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_6.jpg",
-        "src_thumbnail": "photo_6-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_7.jpg",
-        "src_thumbnail": "photo_7-thumbnail.jpg",
         "description": ""
     },
     {
         "src": "photo_8.jpg",
-        "src_thumbnail": "photo_8-thumbnail.jpg",
         "description": ""
     }
 ]

@@ -104,14 +104,32 @@ reloadTemplateData();
 
 
     gulp.task(prefix + 'thumbnail', function () {
-        sources[prefix]('img/*')
-        .pipe(imageResize({ 
-            height : 128,
-            upscale : false,
-            imageMagick: true
-        }))
-        .pipe(rename(function (path) { path.basename += "-thumbnail"; }))
-        .pipe(gulp.dest('public/img'));
+        var size = {
+            large: 1024,
+            medium: 512,
+            small: 128
+        };
+        var quality = {
+            high: 1,
+            middle: 0.7,
+            low: 0.3
+        };
+
+        Object.keys(size).forEach(function(s) {
+            var sv = size[s];
+            Object.keys(quality).forEach(function(q) {
+                var qv = quality[q];
+                sources[prefix]('img/*.jpg')
+                    .pipe(imageResize({
+                        height : sv,
+                        upscale : false,
+                        quality: qv,
+                        imageMagick: true
+                    }))
+                    .pipe(rename(function (path) { path.basename += "-" + [s, q].join("-"); }))
+                    .pipe(gulp.dest('public/img'));
+            });
+        });
     });
 });
 
@@ -141,9 +159,14 @@ function recompilehtml() {
 function reloadTemplateData() {
     templateVars.menu = loadJSON("./data/menu.json");
     templateVars.menu.images.forEach(function(image) {
-        image.src_thumbnail = basenameSuffix(image.src, "-thumbnail");
+        var src = image.src;
+        image.src_thumbnail = basenameSuffix(src, "-small-middle");
     });
     templateVars.photos = loadJSON("./data/photos.json");
+    templateVars.photos.forEach(function(image) {
+        var src = image.src;
+        image.src_thumbnail = basenameSuffix(src, "-small-middle");
+    });
 }
 
 function loadJSON(path) {
