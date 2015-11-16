@@ -10,7 +10,7 @@ build:
     - script:
         name: bower install
         code: |
-          $(npm bin)/bower install
+          $(npm bin)/bower install --allow-root
     - script:
         name: build semantic ui
         code: |
