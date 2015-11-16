@@ -11,12 +11,10 @@ var attachFastClick = require('fastclick');
 $(function() {
     'use strict';
 
-    $('.gallery a').simpleLightbox({
-        heightRatio: 0.5
-    });
-
     require('browsernizr/test/css/transforms3d');
     require('browsernizr');
+
+    $('.gallery a').simpleLightbox({});
 
     attachFastClick(document.body);
 
