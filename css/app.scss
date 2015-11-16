@@ -1,3 +1,5 @@
+@import "./node_modules/simplelightbox/dist/simplelightbox.scss";
+
 * {
   font-family: 'Noto Sans Japanese',Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
@@ -290,4 +292,22 @@ iframe#gmap {
 
 .routes {
     margin-top: 2em;
+}
+
+
+.gallery {
+    overflow: hidden;
+
+    a img {
+        float: left;
+        width: 20%;
+        height: auto;
+        border: 2px solid #fff;
+        -webkit-transition: -webkit-transform .15s ease;
+        -moz-transition: -moz-transform .15s ease;
+        -o-transition: -o-transform .15s ease;
+        -ms-transition: -ms-transform .15s ease;
+        transition: transform .15s ease;
+        position: relative;
+    }
 }

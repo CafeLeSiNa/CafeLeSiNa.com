@@ -23,15 +23,15 @@
     ],
     "images": [
         {
-            "src": "curry.jpg",
+            "src": "/img/curry.jpg",
             "description": ""
         },
         {
-            "src": "pasta.jpg",
+            "src": "/img/pasta.jpg",
             "description": ""
         },
         {
-            "src": "ramen.jpg",
+            "src": "/img/ramen.jpg",
             "description": ""
         }
     ]

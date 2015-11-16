@@ -22,8 +22,8 @@
     "gulp-webserver": "^0.9.1",
     "jquery": "^2.1.4",
     "semantic-ui": "^2.1.6",
+    "simplelightbox": "^1.5.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.6.1",
-    "nanogallery": "~5.9.0"
+    "watchify": "^3.6.1"
   }
 }

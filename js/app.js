@@ -2,7 +2,7 @@ window.jQuery = require('jquery');
 window.$ = window.jQuery;
 
 require('flip/dist/jquery.flip.js');
-require('nanogallery');
+require('simplelightbox');
 
 require('semantic-ui');
 
@@ -10,6 +10,10 @@ var attachFastClick = require('fastclick');
 
 $(function() {
     'use strict';
+
+    $('.gallery a').simpleLightbox({
+        heightRatio: 0.5
+    });
 
     require('browsernizr/test/css/transforms3d');
     require('browsernizr');
@@ -89,17 +93,6 @@ $(function() {
     function trim_url(url) {
         return url.replace(/\/$/, "");
     }
-
-    $('.gallery').nanoGallery({
-        theme: 'light',
-        colorScheme: 'none',
-        thumbnailWidth: 'auto',
-        thumbnailHeight: 100,
-        itemsBaseURL: '/img',
-        thumbnailHoverEffect: [{ name: 'labelAppear75', duration: 300 }],
-        i18n: { thumbnailImageDescription: '拡大する', thumbnailAlbumDescription: 'Open Album' },
-        thumbnailLabel: { display: true, position: 'overImageOnMiddle', align: 'center' }
-    });
 
     $('.ui.embed').embed();
 });

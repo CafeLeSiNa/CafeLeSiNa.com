@@ -22,7 +22,9 @@
 
                 <div class="gallery" id="photos">
                     {{#photos}}
-                    <a href="{{src}}" data-ngid="{{src}}" data-ngdesc="{{src}}" data-ngthumb="{{src_thumbnail}}"></a>
+                    <a href="{{src}}">
+                        <img src="{{src_thumbnail}}">
+                    </a>
                     {{/photos}}
                 </div>
             </div>
