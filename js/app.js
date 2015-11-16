@@ -1,10 +1,18 @@
-var attachFastClick = require('fastclick');
+window.jQuery = require('jquery');
+window.$ = window.jQuery;
 
-require('browsernizr/test/css/transforms3d');
-require('browsernizr');
+require('flip/dist/jquery.flip.js');
+require('nanogallery');
+
+require('semantic-ui');
+
+var attachFastClick = require('fastclick');
 
 $(function() {
     'use strict';
+
+    require('browsernizr/test/css/transforms3d');
+    require('browsernizr');
 
     attachFastClick(document.body);
 

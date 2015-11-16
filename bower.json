@@ -1,0 +1,22 @@
+{
+  "name": "cafe-lesina-web",
+  "description": "The webpage of Cafe LeSiNa",
+  "main": "",
+  "authors": [
+    "Takatoshi Matsumoto <toqoz403@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/CafeLeSiNa/CafeLeSiNa.com",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flip": "1.0.14",
+    "semantic-ui": "~2.1.6"
+  }
+}

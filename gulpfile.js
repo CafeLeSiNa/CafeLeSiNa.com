@@ -9,21 +9,36 @@ var rename = require('gulp-rename');
 var path = require('path');
 var autoprefixer = require('gulp-autoprefixer');
 
-var watchify = require('gulp-watchify');
+var browserify = require('browserify');
+var watchify = require('watchify');
 var uglify = require('gulp-uglify');
 var streamify = require('gulp-streamify');
+
+var source = require('vinyl-source-stream');
 
 var watching = false;
 gulp.task('enable-watchify', function() { watching = true; });
 
-gulp.task('js', watchify(function(watchify) {
-    gulp.src(['js/app.js'])
-        .pipe(watchify({
-            watch: watching
-        }))
-        .pipe(streamify(uglify()))
-        .pipe(gulp.dest('public/js/'));
-}));
+gulp.task('js', function() {
+    var bundler = browserify({
+        entries: ['./js/app.js'],
+    });
+    if (watching) {
+        bundler.plugin(watchify);
+    }
+    bundler.transform('debowerify');
+    bundler.on('update', rebundle);
+
+    function rebundle() {
+        return bundler
+            .bundle()
+            .pipe(source('app.js'))
+            .pipe(streamify(uglify()))
+            .pipe(gulp.dest('public/js/'));
+    }
+
+    return rebundle();
+});
 
 var sources = {
     s: function s(path, options, cb) {
