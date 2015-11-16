@@ -9,7 +9,8 @@ build:
     - npm-install
     - script:
         name: bower install
-        code: `npm bin`/bower install
+        code: |
+          $(npm bin)/bower install
     - script:
         name: build semantic ui
         code: |
