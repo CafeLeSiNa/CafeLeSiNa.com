@@ -1,3 +1,12 @@
+var WebFont = require('webfontloader');
+WebFont.load({
+    custom: {
+        families: ['Noto Sans Japanese'],
+        urls: ['//fonts.googleapis.com/earlyaccess/notosansjapanese.css'],
+        timeout: 10000
+    }
+});
+
 window.jQuery = require('jquery');
 window.$ = window.jQuery;
 
