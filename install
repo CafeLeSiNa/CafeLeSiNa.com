@@ -1,4 +1,5 @@
 #!/bin/sh
 
 npm install
+`npm bin`/bower install
 ls vendor/semantic/dist || (cd vendor/semantic; $(npm bin)/gulp build)

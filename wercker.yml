@@ -8,6 +8,9 @@ build:
           echo "npm version $(npm -v) running"
     - npm-install
     - script:
+        name: bower install
+        code: `npm bin`/bower install
+    - script:
         name: build semantic ui
         code: |
           (cd vendor/semantic; $(npm bin)/gulp build)
