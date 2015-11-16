@@ -12,11 +12,23 @@
 
         <div class="ui text container">
             <div class="menu-list">
-                <div class="ui breadcrumb">
-                    <a href="/" class="section">トップ</a>
-                    <i class="right angle icon divider"></i>
-                    <a href="/menu" class="active section">メニュー</a>
-                </div>
+                <ol class="ui breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                    {{#breadcrumb.menu}}
+                        <li>
+                            {{#active}}
+                                <a itemprop="item" href="{{url}}" class="section active"><span itemprop="name">{{name}}</span></a>
+                            {{/active}}
+                            {{^active}}
+                                <a itemprop="item" href="{{url}}" class="section"><span itemprop="name">{{name}}</span></a>
+                            {{/active}}
+                            <meta itemprop="position" content="{{@index + 1}}" />
+
+                            {{^active}}
+                            <i class="right angle icon divider"></i>
+                            {{/active}}
+                        </li>
+                    {{/breadcrumb.menu}}
+                </ol>
 
                 <h1 class="page-title"><i class="food icon"></i>メニュー表</h1>
 

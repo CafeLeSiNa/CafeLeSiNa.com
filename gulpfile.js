@@ -98,7 +98,7 @@ reloadTemplateData();
     });
 
     gulp.task(prefix + 'html', function() {
-        sources[prefix]("html/**/index.tmpl", {base: './html'})
+        sources[prefix]("html/*.tmpl", {base: './html'})
             .pipe(mustache(templateVars, {}, templatePartials))
             .pipe(gulp.dest("public"));
     });
@@ -167,6 +167,16 @@ gulp.task('serve', function() {
                 livereload: true,
                 directoryListing: false,
                 open: true,
+                middleware: function(req, res, next) {
+                    var basename = path.basename(req.url);
+                    var extname = path.extname(req.url);
+
+                    if (basename && basename !== "/" && !extname) {
+                        // like the github page
+                        req.url += ".html";
+                    }
+                    next();
+                },
             }));
     }, 1000);
 });
@@ -178,7 +188,7 @@ gulp.task('release', ['build']);
 gulp.task('dev', ['watch-build', 'serve']);
 
 function recompilehtml() {
-    gulp.src("html/**/index.tmpl", {base: './html'})
+    gulp.src("html/*.tmpl", {base: './html'})
     .pipe(mustache(templateVars, {}, templatePartials))
     .pipe(gulp.dest("public"));
 }
