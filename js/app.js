@@ -23,13 +23,11 @@ $(function() {
     require('browsernizr/test/css/transforms3d');
     require('browsernizr');
 
+    $('.ui.embed').embed();
     $('.gallery a').simpleLightbox({});
-
-    attachFastClick(document.body);
 
     // Navigation
     $(".menu a").each(function(_, node) {
-        console.log(node);
         var $node = $(node);
         var href = $node.attr('href');
 
@@ -93,6 +91,8 @@ $(function() {
     $('.back').height(introductionHeight);
     $('#kanban').height(introductionHeight);
 
+    attachFastClick(document.body);
+
     function max(a, b) {
         return a > b ? a : b;
     }
@@ -101,5 +101,8 @@ $(function() {
         return url.replace(/\/$/, "");
     }
 
-    $('.ui.embed').embed();
+    var css = document.querySelectorAll('.async-css');
+    for (var i = 0, l = css.length; i < l; i++) {
+        css[i].rel = 'stylesheet';
+    }
 });
