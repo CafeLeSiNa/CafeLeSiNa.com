@@ -289,6 +289,11 @@ iframe#gmap {
     max-height: 50%;
 }
 
+@media (min-width: 601px) {
+    .sp {
+        display: none;
+    }
+}
 @media (max-width: 600px) {
     .pc {
         display: none;
