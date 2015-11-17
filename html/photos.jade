@@ -1,0 +1,27 @@
+extend ./_layout
+
+block head
+  title Cafe LeSinaの店内写真 | 焼き物の町、益子のカフェ
+  meta(name="description", content="焼き物/陶器で有名な町、益子にあるカフェLeSiNaの店内写真です。")
+
+block content
+  .menu-list
+    ol.ui.breadcrumb(itemscope, itemtype="http://schema.org/BreadcrumbList")
+      each crumb, index in breadcrumb.photos
+        li
+          a.section(class=crumb.active? 'active' : '', itemprop="item", href=crumb.url)
+            span(itemprop="name")= crumb.name
+
+          meta(itemprop="position", content=index + 1)
+          if (!crumb.active)
+            i.right.angle.icon.divider
+
+    h1.page-title
+      i.photo.icon
+      | 店内写真
+
+    .gallery#photos
+      each photo in photos
+        a(href=photo.src)
+          img(src=photo.src_thumbnail, alt="店内の写真です")
+

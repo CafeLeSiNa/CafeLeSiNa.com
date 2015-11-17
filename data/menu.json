@@ -19,11 +19,13 @@
     "images": [
         {
             "src": "/img/curry.jpg",
-            "description": ""
+            "description": "",
+            "alt": "LeSiNa特製カレーの画像です"
         },
         {
             "src": "/img/ramen.jpg",
-            "description": ""
+            "description": "",
+            "alt": "うらメニュー、カレーの画像です"
         }
     ]
 }
