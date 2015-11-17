@@ -1,0 +1,38 @@
+{
+    "access": [
+        {
+            "url": "/",
+            "name": "トップ",
+            "active": false
+        },
+        {
+            "url": "/access",
+            "name": "アクセス",
+            "active": true
+        }
+    ],
+    "photos": [
+        {
+            "url": "/",
+            "name": "トップ",
+            "active": false
+        },
+        {
+            "url": "/photos",
+            "name": "店内写真",
+            "active": true
+        }
+    ],
+    "menu": [
+        {
+            "url": "/",
+            "name": "トップ",
+            "active": false
+        },
+        {
+            "url": "/menu",
+            "name": "メニュー",
+            "active": true
+        }
+    ]
+}

@@ -199,11 +199,14 @@ function reloadTemplateData() {
         var src = image.src;
         image.src_thumbnail = basenameSuffix(src, "-small-middle");
     });
+
     templateVars.photos = loadJSON("./data/photos.json");
     templateVars.photos.forEach(function(image) {
         var src = image.src;
         image.src_thumbnail = basenameSuffix(src, "-small-middle");
     });
+
+    templateVars.breadcrumb = loadJSON("./data/breadcrumb.json");
 }
 
 function loadJSON(path) {
