@@ -46,6 +46,30 @@ html {
         width: 100%;
         box-sizing: border-box;
     }
+
+    @media (max-width: 600px) {
+        .scrollable {
+            overflow: auto;
+
+
+            &::-webkit-scrollbar {
+                height: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 5px;
+                background: #eee;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            img {
+                width: 450px;
+                max-width: 450px;
+            }
+        }
+    }
 }
 
 header {
