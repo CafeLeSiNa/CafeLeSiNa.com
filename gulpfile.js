@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var mustache = require("gulp-mustache-plus");
+var jade = require("gulp-jade");
 var webserver = require('gulp-webserver');
 var sass = require('gulp-sass');
 var fs = require('fs');
@@ -67,14 +67,6 @@ var sources = {
     }
 };
 
-var templatePartials = {
-    head:   "html/partial/head.tmpl",
-    header:   "html/partial/header.tmpl",
-    nav: "html/partial/nav.tmpl",
-    js: "html/partial/js.tmpl",
-    css: "html/partial/css.tmpl",
-};
-
 function basenameSuffix(filepath, suffix) {
     ext = path.extname(filepath);
     base = path.basename(filepath, ext);
@@ -98,15 +90,9 @@ reloadTemplateData();
     });
 
     gulp.task(prefix + 'html', function() {
-        sources[prefix]("html/*.tmpl", {base: './html'})
-            .pipe(mustache(templateVars, {}, templatePartials))
+        sources[prefix]("html/*.jade", {base: './html'})
+            .pipe(jade({locals: templateVars}))
             .pipe(gulp.dest("public"));
-    });
-
-    gulp.task(prefix + 'html_partial', function() {
-        sources[prefix]("html/partial/*.tmpl", function() {
-            recompilehtml();
-        });
     });
 
     gulp.task(prefix + 'jsondata', function() {
@@ -164,7 +150,7 @@ gulp.task('serve', function() {
     setTimeout(function() {
         gulp.src('public')
             .pipe(webserver({
-                livereload: true,
+                livereload: false,
                 directoryListing: false,
                 open: true,
                 middleware: function(req, res, next) {
@@ -181,16 +167,16 @@ gulp.task('serve', function() {
     }, 1000);
 });
 
-gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'shtml_partial', 'scss', 'js', 'simg', 'sthumbnail']);
-gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'whtml_partial', 'wcss', 'enable-watchify', 'js', 'wimg', 'wthumbnail']);
+gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'scss', 'js', 'simg', 'sthumbnail']);
+gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'wcss', 'enable-watchify', 'js', 'wimg', 'wthumbnail']);
 
 gulp.task('release', ['build']);
 gulp.task('dev', ['watch-build', 'serve']);
 
 function recompilehtml() {
-    gulp.src("html/*.tmpl", {base: './html'})
-    .pipe(mustache(templateVars, {}, templatePartials))
-    .pipe(gulp.dest("public"));
+    gulp.src("html/*.jade", {base: './html'})
+        .pipe(jade({locals: templateVars}))
+        .pipe(gulp.dest("public"));
 }
 
 function reloadTemplateData() {

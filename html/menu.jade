@@ -1,0 +1,37 @@
+extend ./_layout
+
+block head
+  title Cafe LeSinaのメニュー | 焼き物の町、益子のカフェ
+  meta(name="description", content="焼き物/陶器で有名な町、益子にあるカフェLeSiNaのメニューです。")
+
+block content
+  .menu-list
+    ol.ui.breadcrumb(itemscope, itemtype="http://schema.org/BreadcrumbList")
+        each crumb, index in breadcrumb.menu
+          li
+            a.section(class=crumb.active? 'active' : '', itemprop="item", href=crumb.url)
+              span(itemprop="name")= crumb.name
+
+            meta(itemprop="position", content=index + 1)
+            if (!crumb.active)
+              i.right.angle.icon.divider
+
+    h1.page-title
+      i.food.icon
+      | メニュー表
+
+    ul.ui.list
+      each name in menu.names
+        li= name.name + " " + (name.set ? "※" : '') + " ... " + name.price + "円"
+
+    p.note
+      | ※付きメニューは、サラダ、コーヒーが付いています
+      br
+      br
+      | こだわりのラーメンを冬季限定でご提供開始しました。スープは魚介・動物系のダブルスープ。<br>
+      | 寒い冬にはあたたまるスープのラーメンを是非お召しあがりください。
+
+    .gallery#photos
+        each image in menu.images
+          a(href=image.src)
+            img(src=image.src_thumbnail, alt=image.alt)

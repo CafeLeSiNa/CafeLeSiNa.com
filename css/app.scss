@@ -117,6 +117,12 @@ header {
     color: hsl(43, 53%, 93%);
     -webkit-text-stroke-color: hsl(38, 47%, 71%);
 
+    .logo, .copy {
+        display: block;
+        margin: 0 0 1em;
+        line-height: 1.4285em;
+    }
+
     .logo {
         font-size: 4em;
         @media (max-width: 600px) {
@@ -297,6 +303,10 @@ iframe#gmap {
 @media (max-width: 600px) {
     .pc {
         display: none;
+    }
+
+    .sp-block {
+        display: block;
     }
 }
 
