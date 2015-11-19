@@ -146,6 +146,11 @@ reloadTemplateData();
     });
 });
 
+gulp.task('sitemap', function() {
+    gulp.src("sitemap.xml")
+        .pipe(gulp.dest("public"));
+});
+
 gulp.task('serve', function() {
     setTimeout(function() {
         gulp.src('public')
@@ -167,8 +172,8 @@ gulp.task('serve', function() {
     }, 1000);
 });
 
-gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'scss', 'js', 'simg', 'sthumbnail']);
-gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'wcss', 'enable-watchify', 'js', 'wimg', 'wthumbnail']);
+gulp.task('build', ['ssemantic', 'sjsondata', 'shtml', 'scss', 'js', 'simg', 'sthumbnail', 'sitemap']);
+gulp.task('watch-build', ['wsemantic', 'wjsondata', 'whtml', 'wcss', 'enable-watchify', 'js', 'wimg', 'wthumbnail', 'sitemap']);
 
 gulp.task('release', ['build']);
 gulp.task('dev', ['watch-build', 'serve']);
