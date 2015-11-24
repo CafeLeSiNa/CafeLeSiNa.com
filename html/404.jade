@@ -1,0 +1,26 @@
+extend ./_layout
+
+block head
+  title Cafe LeSinaへのアクセス | 焼き物の町、益子のカフェ
+  meta(name="description", content="焼き物/陶器で有名な町、益子にあるカフェLeSiNaへのアクセスです。")
+
+block content
+  .not-found
+    h1.page-title
+      i.search.icon
+      | お探しのページは削除もしくは移動した可能性があります。
+
+    p.to-top
+      a.ui.huge.primary.button(href='/')
+        i.home.icon
+        | Cafe LeSiNa トップページへ
+
+    ul.link-list
+      li
+        a(href='/') トップ
+      li
+        a(href='/menu') メニュー
+      li
+        a(href='/access') アクセス
+      li
+        a(href='/photos') 店内写真

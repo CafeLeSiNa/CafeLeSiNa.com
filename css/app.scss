@@ -221,13 +221,10 @@ header {
             font-size: 1rem;
         }
     }
+}
 
-    .ui.primary.button {
-        background-color: hsl(31, 78%, 62%);
-
-        &.secret {
-        }
-    }
+.ui.huge.primary.button {
+    background-color: hsl(31, 78%, 62%);
 }
 
 .menu-list {
@@ -241,7 +238,38 @@ header {
     }
 }
 
-.map, .menu-list {
+.not-found {
+    .page-title {
+        text-align: center;
+    }
+
+    & > .to-top {
+        text-align: center;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+
+    .link-list {
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            &:after {
+                content: "|";
+                color: #999;
+                margin-left: 0.5em;
+                margin-right: 0.5em;
+            }
+
+            &:last-child:after {
+                content: "";
+            }
+        }
+    }
+}
+
+.map, .menu-list, .not-found {
     text-align: left;
 
     margin: 0 auto;
