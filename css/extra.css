@@ -1,0 +1,6 @@
+.site-cover.ui.masthead {
+  background-image: url("/img/bg_1-large-middle.jpg");
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center center;
+  background-repeat: none; }
